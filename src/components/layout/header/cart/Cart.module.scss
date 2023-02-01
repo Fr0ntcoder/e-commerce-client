@@ -27,13 +27,14 @@
 	position: absolute;
 	top: 130%;
 	right: 0;
-	width: 250px;
+	width: 300px;
 	padding: 15px 15px 15px 0;
 	border: 1px solid #000;
 }
 .bottom {
 	display: flex;
-	justify-content: flex-end;
+	padding-left: 15px;
+	justify-content: space-between;
 }
 .btn {
 	font-size: 14px;
@@ -41,4 +42,13 @@
 	border-radius: 5px;
 	background: $green;
 	color: #fff;
+}
+.price {
+	&-title {
+		font-size: 18px;
+		margin-bottom: 2px;
+	}
+	&-text {
+		font-size: 18px;
+	}
 }

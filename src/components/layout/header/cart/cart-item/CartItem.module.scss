@@ -1,5 +1,6 @@
 .item {
 	display: flex;
+	width: 100%;
 	align-items: center;
 	margin-bottom: 15px;
 }
@@ -9,5 +10,10 @@
 	margin-bottom: 5px;
 }
 .price {
+	display: block;
 	font-size: 16px;
+	margin-bottom: 15px;
+}
+.content {
+	width: 100%;
 }

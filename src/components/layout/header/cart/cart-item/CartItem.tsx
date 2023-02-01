@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import { FC } from 'react';
 
+import CartActions from '@/components/layout/header/cart/cart-actions/CartActions';
+
 import { priceFormat } from '@/utils/price-format.utils';
 
 import styles from './CartItem.module.scss';
 import { ICartItem } from '@/@types/cart.interface';
-import { IProduct } from '@/@types/product.interface';
 
 const CartItem: FC<{ item: ICartItem }> = ({ item }) => {
 	return (
@@ -19,6 +20,7 @@ const CartItem: FC<{ item: ICartItem }> = ({ item }) => {
 			<div className={styles.content}>
 				<h3 className={styles.title}>{item.product.name}</h3>
 				<span className={styles.price}>{priceFormat(item.product.price)}</span>
+				<CartActions item={item} />
 			</div>
 		</div>
 	);

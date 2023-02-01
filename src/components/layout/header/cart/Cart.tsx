@@ -4,12 +4,14 @@ import CartItem from '@/components/layout/header/cart/cart-item/CartItem';
 
 import { useOutside } from '@/hooks/useOutside';
 
+import { useTypedSelector } from '../../../../hooks/useTypedSelector';
+import { priceFormat } from '../../../../utils/price-format.utils';
+
 import styles from './Cart.module.scss';
-import { cart } from '@/data/cart.data';
 
 const Cart: FC = () => {
-	/* const [isOpen, setIsOpen] = useState(false); */
 	const { ref, setIsShow, isShow } = useOutside(false);
+	const cart = useTypedSelector((state) => state.cart.items);
 	return (
 		<div className={styles.wrapper} ref={ref}>
 			<span className={styles.heading} onClick={() => setIsShow(!isShow)}>
@@ -22,6 +24,10 @@ const Cart: FC = () => {
 						<CartItem item={item} key={item.id} />
 					))}
 					<div className={styles.bottom}>
+						<div className={styles.price}>
+							<h5 className={styles['price-title']}>Общая сумма:</h5>
+							<span className={styles['price-text']}>{priceFormat(100)}</span>
+						</div>
 						<button className={styles.btn}>Проверить</button>
 					</div>
 				</div>
