@@ -1,0 +1,17 @@
+.item {
+	margin-right: 15px;
+	&:last-child {
+		margin-right: 0;
+	}
+}
+.link {
+	font-size: 13px;
+	font-weight: 500;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	transition: all 0.3s ease-in-out;
+	color: $light-brown;
+	&:hover {
+		opacity: 0.8;
+	}
+}
