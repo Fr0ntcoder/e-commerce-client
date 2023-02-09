@@ -1,37 +1,25 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 
 import CartItem from '@/components/layout/header/cart/cart-item/CartItem';
 
 import { useOutside } from '@/hooks/useOutside';
 
-import { useTypedSelector } from '../../../../hooks/useTypedSelector';
-import { priceFormat } from '../../../../utils/price-format.utils';
+import { priceFormat } from '@/utils/price-format.utils';
 
 import styles from './Cart.module.scss';
+import { useCart } from '@/store/cart/useCart';
+import { useActions } from '@/store/useActions';
+import { useTypedSelector } from '@/store/useTypedSelector';
 
 const Cart: FC = () => {
-	const { ref, setIsShow, isShow } = useOutside(false);
-	const cart = useTypedSelector((state) => state.cart.items);
+	const { items } = useCart();
+	const { changeCartModal } = useActions();
 	return (
-		<div className={styles.wrapper} ref={ref}>
-			<span className={styles.heading} onClick={() => setIsShow(!isShow)}>
-				<span className={styles.badge}>1</span>
+		<div className={styles.wrapper}>
+			<span className={styles.heading} onClick={() => changeCartModal('cart')}>
+				<span className={styles.badge}>{items.length}</span>
 				<div className={styles.text}>Моя корзина</div>
 			</span>
-			{isShow && (
-				<div className={styles.cart}>
-					{cart.map((item) => (
-						<CartItem item={item} key={item.id} />
-					))}
-					<div className={styles.bottom}>
-						<div className={styles.price}>
-							<h5 className={styles['price-title']}>Общая сумма:</h5>
-							<span className={styles['price-text']}>{priceFormat(100)}</span>
-						</div>
-						<button className={styles.btn}>Проверить</button>
-					</div>
-				</div>
-			)}
 		</div>
 	);
 };

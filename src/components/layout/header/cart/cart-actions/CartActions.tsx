@@ -1,32 +1,31 @@
 import { FC, useState } from 'react';
 import { FaTrash } from 'react-icons/fa';
 
-import { useActions } from '@/hooks/useActions';
-
 import styles from './CartActions.module.scss';
 import { ICartItem } from '@/@types/cart.interface';
+import { useActions } from '@/store/useActions';
 
 const CartActions: FC<{ item: ICartItem }> = ({ item }) => {
-	let [counter, setCounter] = useState(1);
-	const { removeFromCart } = useActions();
-	const increment = () => {
-		if (counter > 1) setCounter(counter - 1);
-	};
-	const decrement = () => {
-		setCounter(counter + 1);
-	};
+	const { removeFromCart, changeQuantity } = useActions();
 	return (
 		<div className={styles.wrapper}>
-			<button className={styles.btn} onClick={increment}>
+			<button
+				className={styles.btn}
+				disabled={item.quantity === 1}
+				onClick={() => changeQuantity({ id: item.id, type: 'minus' })}
+			>
 				-
 			</button>
 			<input
 				type='text'
-				value={counter}
-				onChange={(e) => setCounter(+e.target.value)}
+				value={item.quantity}
+				onChange={(e) => item.quantity}
 				className={styles.value}
 			/>
-			<button className={styles.btn} onClick={decrement}>
+			<button
+				className={styles.btn}
+				onClick={() => changeQuantity({ id: item.id, type: 'plus' })}
+			>
 				+
 			</button>
 			<button className={styles.remove} onClick={() => removeFromCart(item.id)}>

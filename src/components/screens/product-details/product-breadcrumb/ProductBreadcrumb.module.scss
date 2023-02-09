@@ -1,0 +1,11 @@
+.root {
+	font-size: 18px;
+	font-weight: 500;
+	color: #000;
+	& a {
+		color: #000;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

@@ -2,7 +2,10 @@
 	display: flex;
 	width: 100%;
 	align-items: center;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
+	& img {
+		margin-right: 20px;
+	}
 }
 .title {
 	font-size: 16px;
@@ -12,8 +15,21 @@
 .price {
 	display: block;
 	font-size: 16px;
-	margin-bottom: 15px;
+	color: $light-brown;
+	& span {
+		margin-right: 10px;
+	}
 }
 .content {
 	width: 100%;
+}
+.variation {
+	font-size: 16px;
+	text-transform: lowercase;
+	margin: 5px 0 15px 0;
+	color: $light-brown;
+	& span {
+		text-transform: none;
+		margin-right: 10px;
+	}
 }

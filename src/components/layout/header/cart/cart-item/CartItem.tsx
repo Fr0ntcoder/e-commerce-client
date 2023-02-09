@@ -19,7 +19,14 @@ const CartItem: FC<{ item: ICartItem }> = ({ item }) => {
 			/>
 			<div className={styles.content}>
 				<h3 className={styles.title}>{item.product.name}</h3>
-				<span className={styles.price}>{priceFormat(item.product.price)}</span>
+				<span className={styles.price}>
+					<span>Цена:</span>
+					{priceFormat(item.product.price * item.quantity)}
+				</span>
+				<div className={styles.variation}>
+					<span>Размер:</span>
+					{item.size}
+				</div>
 				<CartActions item={item} />
 			</div>
 		</div>

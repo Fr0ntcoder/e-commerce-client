@@ -1,0 +1,14 @@
+.title {
+	display: flex;
+	font-size: 60px;
+	font-weight: bold;
+	text-align: right;
+	justify-content: flex-end;
+	margin: 100px 0 50px;
+	color: $green;
+	& h2 {
+		max-width: 550px;
+		width: 100%;
+		word-wrap: break-word;
+	}
+}
