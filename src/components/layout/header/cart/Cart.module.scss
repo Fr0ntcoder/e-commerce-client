@@ -1,0 +1,54 @@
+.wrapper {
+	position: relative;
+}
+.heading {
+	display: flex;
+	font-weight: 500;
+	align-items: center;
+	color: $black;
+	cursor: pointer;
+}
+.badge {
+	display: flex;
+	width: 25px;
+	height: 25px;
+	align-items: center;
+	justify-content: center;
+	margin-right: 10px;
+	border-radius: 50%;
+	background: red;
+	color: #fff;
+}
+.text {
+	font-size: 14px;
+	text-transform: uppercase;
+}
+.cart {
+	position: absolute;
+	top: 130%;
+	right: 0;
+	width: 300px;
+	padding: 15px 15px 15px 0;
+	border: 1px solid #000;
+}
+.bottom {
+	display: flex;
+	padding-left: 15px;
+	justify-content: space-between;
+}
+.btn {
+	font-size: 14px;
+	padding: 5px 20px;
+	border-radius: 5px;
+	background: $green;
+	color: #fff;
+}
+.price {
+	&-title {
+		font-size: 18px;
+		margin-bottom: 2px;
+	}
+	&-text {
+		font-size: 18px;
+	}
+}

@@ -1,7 +1,9 @@
 import { NextPage } from 'next';
 
-const Home: NextPage = () => {
-	return <div>777</div>;
+import Home from '@/components/screens/home/Home';
+
+const HomePage: NextPage = () => {
+	return <Home />;
 };
 
-export default Home;
+export default HomePage;

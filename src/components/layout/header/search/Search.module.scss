@@ -1,0 +1,41 @@
+.input {
+	position: relative;
+	display: flex;
+	align-items: center;
+	margin: 0 auto;
+	padding-bottom: 5px;
+	border-bottom: 1px solid $light-brown;
+	&::after {
+		position: absolute;
+		content: '';
+		width: 500px;
+		top: -150px;
+		left: 50%;
+		height: 500px;
+		border-radius: 50%;
+		background: $green;
+		transform: translateX(-50%);
+		opacity: 0.1;
+	}
+	& input {
+		position: relative;
+		width: 300px;
+		font-size: 16px;
+		margin-right: 10px;
+		transition: all 0.3s ease-in-out;
+		background: transparent;
+		z-index: 2;
+		&::placeholder {
+			color: $light-brown;
+		}
+		&::-webkit-input-placeholder {
+			color: $light-brown;
+		}
+	}
+	& svg {
+		position: relative;
+		transform: rotate(90deg);
+		color: $light-brown;
+		z-index: 2;
+	}
+}

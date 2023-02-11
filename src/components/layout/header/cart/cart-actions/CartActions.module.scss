@@ -1,0 +1,24 @@
+.wrapper {
+	display: flex;
+	width: 100%;
+	align-items: center;
+}
+.btn {
+	width: 30px;
+	height: 30px;
+	font-size: 18px;
+	background: $dark-green;
+	color: #fff;
+}
+.value {
+	width: 20px;
+	text-align: center;
+	margin: 0 15px;
+}
+.remove {
+	font-size: 18px;
+	margin: auto 0 0 auto;
+	border: none;
+	background: none;
+	color: red;
+}
